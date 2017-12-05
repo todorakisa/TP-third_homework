@@ -21,18 +21,18 @@ describe RomeConverter do
         it "Try to convert 23 to XXIIV" do
         converter = RomeConverter.new
         message = converter.to_rome("23")
-        expect(message).to eql("XXIIV")
+        expect(message).not_to eql("XXIIV")
         end
         it "Try to convert XXIIV to 23" do
         converter = RomeConverter.new
         message = converter.to_dec("XXIIV")
-        expect(message).to eql("23")
+        expect(message).not_to eql("23")
         end
         
         it "Try to convert 14 to XIIII" do
         converter = RomeConverter.new
-        message = converter.to_rome("2")
-        expect(message).to eql("II")
+        message = converter.to_rome("1")
+        expect(message).not_to eql("XIIII")
         end 
                
         it "It converts 4 to IV" do
@@ -43,7 +43,7 @@ describe RomeConverter do
         it "Try to converts 4 to IIII" do
         converter = RomeConverter.new
         message = converter.to_rome("4")
-        expect(message).to eql("IIII")
+        expect(message).not_to eql("IIII")
         end
         it "It converts IV to 4" do
         converter = RomeConverter.new
@@ -53,7 +53,7 @@ describe RomeConverter do
         it "Try to converts IIII to 4" do
         converter = RomeConverter.new
         message = converter.to_dec("IIII")
-        expect(message).to eql("4")
+        expect(message).not_to eql("4")
         end
         
         it "Try to converts 100 to C" do
@@ -87,11 +87,11 @@ describe RomeConverter do
         it "Try to converts 5000 to MMMMM" do
         converter = RomeConverter.new
         message = converter.to_rome("5000")
-        expect(message).to eql("MMMMM")
+        expect(message).not_to eql("MMMMM")
         end
         it "It converts MMMMM to 5000" do
         converter = RomeConverter.new
         message = converter.to_dec("MMMMM")
-        expect(message).to eql("5000")
+        expect(message).not_to eql("5000")
         end 
 end
